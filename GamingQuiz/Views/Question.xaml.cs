@@ -21,7 +21,6 @@ namespace GamingQuiz.Views
         {
             NextQuestionButton.Visibility = System.Windows.Visibility.Visible;
         }
-<<<<<<< ours
 
         private void NextQuestionButtonClick(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -47,8 +46,6 @@ namespace GamingQuiz.Views
                     }
                 }
             }
-=======
->>>>>>> theirs
         }
     }
 }
