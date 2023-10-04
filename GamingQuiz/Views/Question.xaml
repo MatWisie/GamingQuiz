@@ -8,33 +8,80 @@
              d:DesignHeight="450"
              d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="155*" />
-            <RowDefinition Height="94*" />
-            <RowDefinition Height="201*" />
-        </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Height="0"
-               Width="0" />
-        <TextBlock Grid.Row="1"
-                   Text="Some question idk"
-                   FontSize="20" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+        <Button Style="{DynamicResource NextQuestionButton}"
+                FontFamily="Marlett"
+                Name="NextQuestionButton"
+                Visibility="Hidden"
+                FontSize="50"
+                Content="8"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="LightGreen"
+                Foreground="White"
+                Click="NextQuestionButtonClick">
+        </Button>
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="96*" />
+                <RowDefinition Height="65*" />
+                <RowDefinition Height="64*" />
             </Grid.RowDefinitions>
-            <ToggleButton Content="Answer A" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Width="200" Height="70"/>
-            <ToggleButton Grid.Column="1" Content="Answer B" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Width="200" Height="70"/>
-            <ToggleButton Grid.Row="1" Content="Answer C" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Width="200" Height="70"/>
-            <ToggleButton Grid.Row="1" Grid.Column="1" Content="Answer D" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Width="200" Height="70"/>
+            <Image HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Height="0"
+                   Width="0" />
+            <TextBlock Grid.Row="1"
+                       Name="QuestionTextBlock"
+                       FontSize="25"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RadioButton Style="{StaticResource {x:Type ToggleButton}}" 
+                             GroupName="AnswersGroup"
+                              Content="I think so"
+                              x:Name="IThinkSoButton"
+                              VerticalAlignment="Center"
+                              FontSize="25"
+                              Height="70"
+                              Margin="15" 
+                              Click="AnswerClick"/>
+                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                             GroupName="AnswersGroup"
+                             Grid.Column="1"
+                              Content="Yes"
+                              Name="YesButton"
+                              VerticalAlignment="Center"
+                              FontSize="25"
+                              Height="70"
+                              Margin="15"
+                             Click="AnswerClick"/>
+                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                              GroupName="AnswersGroup"
+                              Grid.Column="2"
+                              Content="No"
+                              Name="NoButton"
+                              VerticalAlignment="Center"
+                              FontSize="25"
+                              Height="70"
+                              Margin="15"
+                             Click="AnswerClick" />
+                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                              GroupName="AnswersGroup"
+                              Grid.Column="3"
+                              Content="I don't think so"
+                              Name="IDontThinkSoButton"
+                              VerticalAlignment="Center"
+                              FontSize="25"
+                              Height="70"
+                              Margin="15"
+                             Click="AnswerClick" />
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>
