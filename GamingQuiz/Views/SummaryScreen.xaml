@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="GamingQuiz.Views.SummaryScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GamingQuiz.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="293*" />
+            <RowDefinition Height="141*" />
+        </Grid.RowDefinitions>
+        <Label Name="CongratzLabel"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center" />
+        <Image Grid.Row="1" 
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Name="CongratzImage" />
+        <TextBlock Grid.Row="2"
+                   x:Name="CongratzDescription"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+        <Button HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Content="Replay"
+                Background="Blue"
+                Margin="20" 
+                Grid.Row="2"
+                FontSize="20"
+                Height="70"
+                Width="70"
+                Click="Button_Click" />
+    </Grid>
+</UserControl>
