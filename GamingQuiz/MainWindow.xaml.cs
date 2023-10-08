@@ -1,6 +1,8 @@
 ﻿using GamingQuiz.Models;
 using GamingQuiz.Views;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace GamingQuiz
@@ -10,6 +12,16 @@ namespace GamingQuiz
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            WindowContent.Content = new StartScreen();
+            orgQuestions = questions;
+        }
+
+        private List<QuestionModel> orgQuestions = new List<QuestionModel>();
+
         private List<QuestionModel> questions = new List<QuestionModel>()
         {
             new QuestionModel("Is cereal a soup", "", new AnswerModel[]
@@ -75,10 +87,20 @@ namespace GamingQuiz
                 }),
             }),
         };
-        public MainWindow()
+
+
+        public void ChangeQuizContent()
         {
-            InitializeComponent();
-            WindowContent.Content = new Question(questions[0]);
+            if (questions.Count != 0)
+            {
+                WindowContent.Content = new Question(questions[0]);
+                questions.RemoveAt(0);
+            }
+            else
+            {
+                WindowContent.Content = new SummaryScreen();
+            }
+        }
 
         public void StartNewQuiz()
         {
