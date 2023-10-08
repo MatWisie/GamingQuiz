@@ -1,7 +1,8 @@
 ﻿using GamingQuiz.Models;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
-
 namespace GamingQuiz.Views
 {
     /// <summary>
@@ -17,6 +18,7 @@ namespace GamingQuiz.Views
             QuestionTextBlock.Text = question.questionText;
         }
 
+        private AnswersEnum selectedAnswer;
         private void AnswerClick(object sender, System.Windows.RoutedEventArgs e)
         {
             if (sender is RadioButton radioButton)
@@ -28,27 +30,31 @@ namespace GamingQuiz.Views
 
         private void NextQuestionButtonClick(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (IThinkSoButton.IsChecked == true)
+            if (question.answers != null)
             {
-                foreach (AnswerModel answer in question.answers)
+                AnswerModel answer = question.answers.FirstOrDefault(e => e.Name == selectedAnswer);
+                foreach (KeyValuePair<GenresEnum, int> points in answer.PointsToCategories)
                 {
-                    foreach (KeyValuePair<GenresEnum, int> points in answer.PointsToCategories)
+                    switch (points.Key)
                     {
-                        switch (points.Key)
-                        {
-                            case GenresEnum.Strategy:
-                                GameGenresPointsStatic.Strategy += points.Value;
-                                break;
-                            case GenresEnum.FirstPersonShooters:
-                                GameGenresPointsStatic.FirstPersonShooters += points.Value;
-                                break;
-                            case GenresEnum.Simulators:
-                                GameGenresPointsStatic.Simulators += points.Value;
-                                break;
-                                // More genres here
-                        }
+                        case GenresEnum.Strategy:
+                            GameGenresPointsStatic.gameGenresPoints["Strategy"] += points.Value;
+                            break;
+                        case GenresEnum.FirstPersonShooters:
+                            GameGenresPointsStatic.gameGenresPoints["First Person Shooters"] += points.Value;
+                            break;
+                        case GenresEnum.Simulators:
+                            GameGenresPointsStatic.gameGenresPoints["Simulators"] += points.Value;
+                            break;
+                            // More genres here
                     }
                 }
+
+            }
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.ChangeQuizContent();
             }
         }
     }
