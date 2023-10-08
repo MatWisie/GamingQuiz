@@ -19,7 +19,11 @@ namespace GamingQuiz.Views
 
         private void AnswerClick(object sender, System.Windows.RoutedEventArgs e)
         {
-            NextQuestionButton.Visibility = System.Windows.Visibility.Visible;
+            if (sender is RadioButton radioButton)
+            {
+                selectedAnswer = (AnswersEnum)radioButton.CommandParameter;
+                NextQuestionButton.Visibility = System.Windows.Visibility.Visible;
+            }
         }
 
         private void NextQuestionButtonClick(object sender, System.Windows.RoutedEventArgs e)
