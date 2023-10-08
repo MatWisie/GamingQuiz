@@ -38,6 +38,10 @@ namespace GamingQuiz.Views
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             if (mainWindow != null)
             {
+                foreach (var key in GameGenresPointsStatic.gameGenresPoints.Keys.ToList())
+                {
+                    GameGenresPointsStatic.gameGenresPoints[key] = 0;
+                }
                 mainWindow.StartNewQuiz();
             }
         }
