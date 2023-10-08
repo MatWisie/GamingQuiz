@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:GamingQuiz.Views"
+             xmlns:local="clr-namespace:GamingQuiz"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
@@ -50,7 +50,8 @@
                               FontSize="25"
                               Height="70"
                               Margin="15" 
-                              Click="AnswerClick"/>
+                              Click="AnswerClick"
+                              CommandParameter="{x:Static local:AnswersEnum.IThinkSo}"/>
                 <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
                              GroupName="AnswersGroup"
                              Grid.Column="1"
@@ -60,7 +61,8 @@
                               FontSize="25"
                               Height="70"
                               Margin="15"
-                             Click="AnswerClick"/>
+                             Click="AnswerClick"
+                             CommandParameter="{x:Static local:AnswersEnum.Yes}"/>
                 <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
                               GroupName="AnswersGroup"
                               Grid.Column="2"
@@ -70,7 +72,8 @@
                               FontSize="25"
                               Height="70"
                               Margin="15"
-                             Click="AnswerClick" />
+                             Click="AnswerClick"
+                             CommandParameter="{x:Static local:AnswersEnum.No}" />
                 <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
                               GroupName="AnswersGroup"
                               Grid.Column="3"
@@ -80,7 +83,8 @@
                               FontSize="25"
                               Height="70"
                               Margin="15"
-                             Click="AnswerClick" />
+                             Click="AnswerClick"
+                             CommandParameter="{x:Static local:AnswersEnum.IDontThinkSo}" />
             </Grid>
         </Grid>
     </Grid>
