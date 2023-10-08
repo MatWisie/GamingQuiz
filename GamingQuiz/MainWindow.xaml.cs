@@ -79,6 +79,24 @@ namespace GamingQuiz
         {
             InitializeComponent();
             WindowContent.Content = new Question(questions[0]);
+
+        public void StartNewQuiz()
+        {
+            if (questions.Count == 0)
+                questions = orgQuestions;
+
+            Random rnd = new Random();
+            questions = questions.OrderBy(e => rnd.Next()).ToList();
+
+            if (questions.Count != 0)
+            {
+                WindowContent.Content = new Question(questions[0]);
+                questions.RemoveAt(0);
+            }
+            else
+            {
+                WindowContent.Content = new SummaryScreen();
+            }
         }
     }
 }
