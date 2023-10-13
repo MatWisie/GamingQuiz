@@ -33,21 +33,9 @@ namespace GamingQuiz.Views
             if (question.answers != null)
             {
                 AnswerModel answer = question.answers.FirstOrDefault(e => e.Name == selectedAnswer);
-                foreach (KeyValuePair<GenresEnum, int> points in answer.PointsToCategories)
+                foreach (KeyValuePair<string, int> points in answer.PointsToCategories)
                 {
-                    switch (points.Key)
-                    {
-                        case GenresEnum.Strategy:
-                            GameGenresPointsStatic.gameGenresPoints["Strategy"] += points.Value;
-                            break;
-                        case GenresEnum.FirstPersonShooters:
-                            GameGenresPointsStatic.gameGenresPoints["First Person Shooters"] += points.Value;
-                            break;
-                        case GenresEnum.Simulators:
-                            GameGenresPointsStatic.gameGenresPoints["Simulators"] += points.Value;
-                            break;
-                            // More genres here
-                    }
+                    GameGenresPointsStatic.gameGenresPoints[points.Key] += points.Value;
                 }
 
             }
