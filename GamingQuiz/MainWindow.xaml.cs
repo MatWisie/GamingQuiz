@@ -26,64 +26,64 @@ namespace GamingQuiz
         {
             new QuestionModel("Is cereal a soup", "", new AnswerModel[]
             {
-                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 10 },
-                    {GenresEnum.RPG, 5 },
-                    {GenresEnum.Simulators, 10 },
-                    {GenresEnum.Strategy, 0 }
+                    {"First Person Shooters", 10 },
+                    {"RPG", 5 },
+                    {"Simulators", 10 },
+                    {"Strategy", 0 }
                 }),
-                new AnswerModel(AnswersEnum.Yes, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.Yes, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 20 },
-                    {GenresEnum.RPG, 10 },
-                    {GenresEnum.Simulators, 15 },
-                    {GenresEnum.Strategy, 0 }
+                    {"First Person Shooters", 0 },
+                    {"RPG", 5 },
+                    {"Simulators", 1 },
+                    {"Strategy", 0 }
                 }),
-                new AnswerModel(AnswersEnum.No, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.No, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 50 },
-                    {GenresEnum.RPG, 60 },
-                    {GenresEnum.Simulators, 5 },
-                    {GenresEnum.Strategy, 1 }
+                    {"First Person Shooters", 20 },
+                    {"RPG", 40 },
+                    {"Simulators", 10 },
+                    {"Strategy", 2 }
                 }),
-                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 20 },
-                    {GenresEnum.RPG, 10 },
-                    {GenresEnum.Simulators, 4 },
-                    {GenresEnum.Strategy, 3 }
+                    {"First Person Shooters", 2 },
+                    {"RPG", 2 },
+                    {"Simulators", 3 },
+                    {"Strategy", 1 }
                 }),
             }),
             new QuestionModel("Is soup a cereal", "", new AnswerModel[]
             {
-                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 10 },
-                    {GenresEnum.RPG, 5 },
-                    {GenresEnum.Simulators, 10 },
-                    {GenresEnum.Strategy, 0 }
+                    {"First Person Shooters", 10 },
+                    {"RPG", 5 },
+                    {"Simulators", 10 },
+                    {"Strategy", 0 }
                 }),
-                new AnswerModel(AnswersEnum.Yes, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.Yes, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 20 },
-                    {GenresEnum.RPG, 10 },
-                    {GenresEnum.Simulators, 15 },
-                    {GenresEnum.Strategy, 0 }
+                    {"First Person Shooters", 0 },
+                    {"RPG", 52 },
+                    {"Simulators", 10 },
+                    {"Strategy", 1 }
                 }),
-                new AnswerModel(AnswersEnum.No, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.No, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 50 },
-                    {GenresEnum.RPG, 60 },
-                    {GenresEnum.Simulators, 5 },
-                    {GenresEnum.Strategy, 1 }
+                    {"First Person Shooters", 10 },
+                    {"RPG", 5 },
+                    {"Simulators", 10 },
+                    {"Strategy", 0 }
                 }),
-                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<GenresEnum,int>
+                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<string,int>
                 {
-                    {GenresEnum.FirstPersonShooters, 20 },
-                    {GenresEnum.RPG, 10 },
-                    {GenresEnum.Simulators, 4 },
-                    {GenresEnum.Strategy, 3 }
+                    {"First Person Shooters", 22 },
+                    {"RPG", 33 },
+                    {"Simulators", 11 },
+                    {"Strategy", 44 }
                 }),
             }),
         };
