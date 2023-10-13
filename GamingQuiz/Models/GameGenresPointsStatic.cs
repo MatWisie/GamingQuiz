@@ -9,7 +9,8 @@ namespace GamingQuiz.Models
             {
                 {"Strategy", 0 },
                 {"First Person Shooters", 0 },
-                {"Simulators", 0 }
+                {"Simulators", 0 },
+                {"RPG", 0 }
             };
     }
 }
