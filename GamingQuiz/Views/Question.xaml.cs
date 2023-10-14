@@ -35,7 +35,8 @@ namespace GamingQuiz.Views
                 AnswerModel answer = question.answers.FirstOrDefault(e => e.Name == selectedAnswer);
                 foreach (KeyValuePair<string, int> points in answer.PointsToCategories)
                 {
-                    GameGenresPointsStatic.gameGenresPoints[points.Key] += points.Value;
+                    var newvalue = (GameGenresPointsStatic.gameGenresPoints[points.Key].Item1 + points.Value, GameGenresPointsStatic.gameGenresPoints[points.Key].Item2);
+                    GameGenresPointsStatic.gameGenresPoints[points.Key] = newvalue;
                 }
 
             }
