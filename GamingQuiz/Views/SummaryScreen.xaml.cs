@@ -15,21 +15,10 @@ namespace GamingQuiz.Views
         {
             InitializeComponent();
 
-            result = GameGenresPointsStatic.gameGenresPoints.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
-            CongratzLabel.Content = $"Congratulations! Your preffered game genre is {result}";
+            var result = GameGenresPointsStatic.gameGenresPoints.OrderByDescending(e => e.Value.Item1).First();
+            CongratzLabel.Content = $"Congratulations! Your preffered game genre is {result.Key}";
 
-            switch (result)
-            {
-                case "Strategy":
-                    CongratzDescription.Text = "You love thinking etc";
-                    break;
-                case "First Person Shooters":
-                    CongratzDescription.Text = "You love shooting etc";
-                    break;
-                case "Simulators":
-                    CongratzDescription.Text = "You love working in gaming wow etc";
-                    break;
-            }
+            CongratzDescription.Text = result.Value.Item2;
 
         }
 
@@ -40,7 +29,8 @@ namespace GamingQuiz.Views
             {
                 foreach (var key in GameGenresPointsStatic.gameGenresPoints.Keys.ToList())
                 {
-                    GameGenresPointsStatic.gameGenresPoints[key] = 0;
+                    var newvalue = (0, GameGenresPointsStatic.gameGenresPoints[key].Item2);
+                    GameGenresPointsStatic.gameGenresPoints[key] = newvalue;
                 }
                 mainWindow.StartNewQuiz();
             }
