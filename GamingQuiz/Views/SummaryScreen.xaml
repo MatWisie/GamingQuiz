@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:GamingQuiz.Views"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignWidth="800"
+             d:Background="#EFEFEF">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -15,24 +16,35 @@
         </Grid.RowDefinitions>
         <Label Name="CongratzLabel"
                VerticalAlignment="Center"
+               FontSize="20"
                HorizontalAlignment="Center" />
-        <Image Grid.Row="1" 
+        <Image Grid.Row="1"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                Name="CongratzImage" />
         <TextBlock Grid.Row="2"
+                   FontSize="20"
                    x:Name="CongratzDescription"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" />
         <Button HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Content="Replay"
-                Background="Blue"
-                Margin="20" 
+                Background="#6564DB"
+                Margin="20"
                 Grid.Row="2"
-                FontSize="20"
+                FontSize="30"
                 Height="70"
                 Width="70"
-                Click="Button_Click" />
+                Click="Button_Click"
+                Foreground="White">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius"
+                            Value="20" />
+                </Style>
+            </Button.Resources>
+            <Image Source="/Assets/Replay.png" />
+        </Button>
+
     </Grid>
 </UserControl>
