@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:GamingQuiz"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignWidth="800"
+             d:Background="#EFEFEF">
     <Grid>
         <Button Style="{DynamicResource NextQuestionButton}"
                 FontFamily="Marlett"
@@ -42,47 +43,32 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <RadioButton Style="{StaticResource {x:Type ToggleButton}}" 
+                <RadioButton Style="{DynamicResource AnswerButtonStyle}"
                              GroupName="AnswersGroup"
-                              Content="I think so"
-                              x:Name="IThinkSoButton"
-                              VerticalAlignment="Center"
-                              FontSize="25"
-                              Height="70"
-                              Margin="15" 
-                              Click="AnswerClick"
-                              CommandParameter="{x:Static local:AnswersEnum.IThinkSo}"/>
-                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                             Content="I think so"
+                             x:Name="IThinkSoButton"
+                             Click="AnswerClick"
+                             CommandParameter="{x:Static local:AnswersEnum.IThinkSo}">
+                </RadioButton>
+                <RadioButton Style="{DynamicResource AnswerButtonStyle}"
                              GroupName="AnswersGroup"
                              Grid.Column="1"
                               Content="Yes"
                               Name="YesButton"
-                              VerticalAlignment="Center"
-                              FontSize="25"
-                              Height="70"
-                              Margin="15"
                              Click="AnswerClick"
                              CommandParameter="{x:Static local:AnswersEnum.Yes}"/>
-                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                <RadioButton Style="{DynamicResource AnswerButtonStyle}"
                               GroupName="AnswersGroup"
                               Grid.Column="2"
                               Content="No"
                               Name="NoButton"
-                              VerticalAlignment="Center"
-                              FontSize="25"
-                              Height="70"
-                              Margin="15"
                              Click="AnswerClick"
                              CommandParameter="{x:Static local:AnswersEnum.No}" />
-                <RadioButton Style="{StaticResource {x:Type ToggleButton}}"
+                <RadioButton Style="{DynamicResource AnswerButtonStyle}"
                               GroupName="AnswersGroup"
                               Grid.Column="3"
                               Content="I don't think so"
                               Name="IDontThinkSoButton"
-                              VerticalAlignment="Center"
-                              FontSize="25"
-                              Height="70"
-                              Margin="15"
                              Click="AnswerClick"
                              CommandParameter="{x:Static local:AnswersEnum.IDontThinkSo}" />
             </Grid>
