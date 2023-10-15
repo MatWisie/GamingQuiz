@@ -5,27 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GamingQuiz.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:Background="#EFEFEF">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Margin="30">
-            <TextBlock FontSize="60">Gaming Quiz</TextBlock>
+                    VerticalAlignment="Center">
+            <TextBlock FontSize="60"
+                       HorizontalAlignment="Center">Gaming Quiz</TextBlock>
             <TextBlock FontSize="30">Find your preffered genre!</TextBlock>
+            <Button Content="START"
+                    Background="#6564DB"
+                    Padding="10"
+                    FontSize="40"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 30 0 0"
+                    Width="300"
+                    Foreground="White"
+                    Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius"
+                                Value="40" />
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
-        <Button Content="START"
-                Background="Green"
-                Padding="20" 
-                FontSize="50"
-                Grid.Row="1" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center"
-                Margin="0 0 0 100"
-                Click="Button_Click" />
         <Label Content="1.0.0"
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom" 
