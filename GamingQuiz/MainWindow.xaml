@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamingQuiz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900"
+        MinWidth="900"
+        Background="#EFEFEF">
     <Grid>
         <ContentControl x:Name="WindowContent" />
     </Grid>
