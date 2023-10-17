@@ -44,6 +44,42 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
+        <Image Source="../Assets/Gamepad.png"
+               Width="120"
+               Margin="20 0 0 0"
+               Grid.Row="1"
+               Grid.Column="2"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               x:Name="GamepadImage"
+               RenderTransformOrigin=".5,.5">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="AngleTransform" Angle="-10" />
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimation Storyboard.TargetName="AngleTransform"
+                                             Storyboard.TargetProperty="Angle"
+                                             To="10"
+                                             AutoReverse="True"
+                                             Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimation Storyboard.TargetName="GamepadImage"
+                                             Storyboard.TargetProperty="Width"
+                                             To="150"
+                                             AutoReverse="True"
+                                             Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        
         <Label Content="1.0.0"
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom" 
