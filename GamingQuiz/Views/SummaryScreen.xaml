@@ -26,7 +26,11 @@
                    FontSize="20"
                    x:Name="CongratzDescription"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center" />
+                   HorizontalAlignment="Center" 
+                   TextWrapping="Wrap"
+                   Background="Blue"
+                   Padding="20"
+                   Foreground="White"/>
         <Button HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Background="#6564DB"
