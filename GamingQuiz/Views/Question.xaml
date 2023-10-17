@@ -19,23 +19,26 @@
                 VerticalAlignment="Center"
                 Background="LightGreen"
                 Foreground="White"
-                Click="NextQuestionButtonClick">
+                Click="NextQuestionButtonClick"
+                Panel.ZIndex="1">
         </Button>
-        <Grid>
+        <Grid Panel.ZIndex="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="96*" />
-                <RowDefinition Height="65*" />
+                <RowDefinition Height="116*" />
+                <RowDefinition Height="45*" />
                 <RowDefinition Height="64*" />
             </Grid.RowDefinitions>
+            <Rectangle Fill="LightGray"
+                       Margin="20" />
             <Image HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Height="0"
-                   Width="0" />
+                   Name="QuestionImage"
+                   Margin="20"/>
             <TextBlock Grid.Row="1"
                        Name="QuestionTextBlock"
                        FontSize="25"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center" />
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -53,22 +56,22 @@
                 <RadioButton Style="{DynamicResource AnswerButtonStyle}"
                              GroupName="AnswersGroup"
                              Grid.Column="1"
-                              Content="Yes"
-                              Name="YesButton"
+                             Content="Yes"
+                             Name="YesButton"
                              Click="AnswerClick"
-                             CommandParameter="{x:Static local:AnswersEnum.Yes}"/>
+                             CommandParameter="{x:Static local:AnswersEnum.Yes}" />
                 <RadioButton Style="{DynamicResource AnswerButtonStyle}"
-                              GroupName="AnswersGroup"
-                              Grid.Column="2"
-                              Content="No"
-                              Name="NoButton"
+                             GroupName="AnswersGroup"
+                             Grid.Column="2"
+                             Content="No"
+                             Name="NoButton"
                              Click="AnswerClick"
                              CommandParameter="{x:Static local:AnswersEnum.No}" />
                 <RadioButton Style="{DynamicResource AnswerButtonStyle}"
-                              GroupName="AnswersGroup"
-                              Grid.Column="3"
-                              Content="I don't think so"
-                              Name="IDontThinkSoButton"
+                             GroupName="AnswersGroup"
+                             Grid.Column="3"
+                             Content="I don't think so"
+                             Name="IDontThinkSoButton"
                              Click="AnswerClick"
                              CommandParameter="{x:Static local:AnswersEnum.IDontThinkSo}" />
             </Grid>
