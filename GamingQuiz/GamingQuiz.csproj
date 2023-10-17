@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Gamepad.png" />
     <None Remove="Assets\Replay.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Gamepad.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Replay.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
