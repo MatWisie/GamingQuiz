@@ -1,7 +1,9 @@
 ﻿using GamingQuiz.Models;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace GamingQuiz.Views
 {
@@ -17,7 +19,7 @@ namespace GamingQuiz.Views
 
             var result = GameGenresPointsStatic.gameGenresPoints.OrderByDescending(e => e.Value.Item1).First();
             CongratzLabel.Content = $"Congratulations! Your preffered game genre is {result.Key}";
-
+            CongratzImage.Source = new BitmapImage(new Uri(result.Value.Item3, UriKind.Absolute));
             CongratzDescription.Text = result.Value.Item2;
 
         }
@@ -29,7 +31,7 @@ namespace GamingQuiz.Views
             {
                 foreach (var key in GameGenresPointsStatic.gameGenresPoints.Keys.ToList())
                 {
-                    var newvalue = (0, GameGenresPointsStatic.gameGenresPoints[key].Item2);
+                    var newvalue = (0, GameGenresPointsStatic.gameGenresPoints[key].Item2, GameGenresPointsStatic.gameGenresPoints[key].Item3);
                     GameGenresPointsStatic.gameGenresPoints[key] = newvalue;
                 }
                 mainWindow.StartNewQuiz();
