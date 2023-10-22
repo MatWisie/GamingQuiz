@@ -28,7 +28,7 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center" 
                    TextWrapping="Wrap"
-                   Background="Blue"
+                   Background="#6564DB"
                    Padding="20"
                    Foreground="White"/>
         <Button HorizontalAlignment="Right"
