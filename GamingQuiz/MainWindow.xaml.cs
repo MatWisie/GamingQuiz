@@ -277,6 +277,91 @@ namespace GamingQuiz
                     {"Fighting", 2 },
                 }),
             }),
+            new QuestionModel("Do you enjoy dueling", "https://www.ox.ac.uk/sites/files/oxford/styles/ow_medium_feature/s3/field/field_image_main/duel.jpg?itok=SkBQyptU", new AnswerModel[]
+            {
+                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<string,int>
+                {
+                    {"Fighting", 10 },
+                    {"Racing", 2 },
+                    {"Shooter", 2 },
+                }),
+                new AnswerModel(AnswersEnum.Yes, new Dictionary<string,int>
+                {
+                    {"Fighting", 15 },
+                    {"Racing", 5 },
+                    {"Shooter", 5 },
+                }),
+                new AnswerModel(AnswersEnum.No, new Dictionary<string,int>
+                {
+                    {"Puzzle", 10 },
+                    {"Simulation", 10 },
+                    {"Adventure", 5 },
+                    {"Platformers", 5 },
+                }),
+                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<string,int>
+                {
+                    {"Puzzle", 5 },
+                    {"Simulation", 5 },
+                    {"Adventure", 2 },
+                    {"Platformers", 2 },
+                }),
+            }),
+            new QuestionModel("Do you enjoy figuring out complex mechanics", "https://images.squarespace-cdn.com/content/v1/55ff0e9ce4b0f86318ea24b4/1442782962399-07XSOU4W7IRBB432M6DR/inide-of-watches-beautiful-and-complex-mechanisms-7.jpg", new AnswerModel[]
+            {
+                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<string,int>
+                {
+                    {"Simulation", 10 },
+                    {"Fighting", 5 },
+                    {"Strategy", 10 },
+                }),
+                new AnswerModel(AnswersEnum.Yes, new Dictionary<string,int>
+                {
+                    {"Simulation", 15 },
+                    {"Fighting", 10 },
+                    {"Strategy", 15 },
+                }),
+                new AnswerModel(AnswersEnum.No, new Dictionary<string,int>
+                {
+                    {"Action", 10 },
+                    {"Adventure", 10 },
+                    {"Platformers", 10 },
+                    {"Shooter", 10 },
+                }),
+                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<string,int>
+                {
+                    {"Action", 5 },
+                    {"Adventure", 5 },
+                    {"Platformers", 5 },
+                    {"Shooter", 5 },
+                }),
+            }),
+            new QuestionModel("Are you interested in building and managing your own empires or cities", "https://m.media-amazon.com/images/I/91op+qBsNZL.jpg", new AnswerModel[]
+            {
+                new AnswerModel(AnswersEnum.IThinkSo, new Dictionary<string,int>
+                {
+                    {"Strategy", 10 },
+                }),
+                new AnswerModel(AnswersEnum.Yes, new Dictionary<string,int>
+                {
+                    {"Strategy", 15 },
+                    {"Role-Playing", 2 },
+                    {"Simulation", 2 },
+                }),
+                new AnswerModel(AnswersEnum.No, new Dictionary<string,int>
+                {
+                    {"Action", 5 },
+                    {"Adventure", 5 },
+                    {"Platformers", 5 },
+                    {"Shooter", 5 },
+                }),
+                new AnswerModel(AnswersEnum.IDontThinkSo, new Dictionary<string,int>
+                {
+                    {"Action", 2 },
+                    {"Adventure", 2 },
+                    {"Platformers", 2 },
+                    {"Shooter", 2 },
+                }),
+            }),
         };
 
 
